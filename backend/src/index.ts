@@ -8,7 +8,11 @@ dotenv.config()
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: "https://student-add-show-1.onrender.com", 
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 app.use(express.json())
 
 app.use("/schoolImages", express.static(path.join(__dirname, "../uploads/schoolImages")));

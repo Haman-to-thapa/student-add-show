@@ -16,7 +16,7 @@ type FormData = {
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 const AddSchool = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
   const [message, setMessage] = useState("")
 
@@ -37,6 +37,8 @@ const AddSchool = () => {
       });
 
       setMessage("School added successfully!");
+
+      reset()
     } catch (err) {
       console.error(err);
       setMessage("Error adding school.");
