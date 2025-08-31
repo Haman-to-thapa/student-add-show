@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getSchools = exports.addSchool = void 0;
 const db_1 = require("../config/db");
 const addSchool = async (req, res) => {
+    console.log("Body:", req.body);
+    console.log("File:", req.file);
     try {
         const { name, address, city, state, contact, email_id } = req.body;
         const image = req.file ? `/schoolImages/${req.file.filename}` : null;
