@@ -13,7 +13,7 @@ type FormData = {
   image: FileList;
 };
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
 
 const AddSchool = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
@@ -32,7 +32,7 @@ const AddSchool = () => {
         }
       });
 
-      await axios.post(`${API_URL}/api/schools`, formData, {
+      await axios.post(`https://student-add-show.onrender.com/api/schools`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

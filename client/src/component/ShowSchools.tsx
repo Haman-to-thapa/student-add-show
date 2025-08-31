@@ -8,14 +8,13 @@ type School = {
   city: string;
   image: string;
 };
-const API_URL = import.meta.env.VITE_API_URL;
 
 const ShowSchools = () => {
   const [schools, setSchools] = useState<School[]>([]);
 
   useEffect(() => {
     axios
-    axios.get(`${API_URL}/api/schools`)
+    axios.get(`https://student-add-show.onrender.com/api/schools`)
       .then((res) => setSchools(res.data))
       .catch((err) => console.error(err));
   }, []);
