@@ -1,6 +1,6 @@
 import {Request, Response} from 'express'
 import { db } from '../config/db'
-import path from 'path'
+
 
 
 export const addSchool = async (req:Request, res:Response) => {
