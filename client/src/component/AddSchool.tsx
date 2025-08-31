@@ -32,9 +32,7 @@ const AddSchool = () => {
         }
       });
 
-      await axios.post(`${API_URL}/api/schools`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(`${API_URL}/api/schools`, formData);
 
       setMessage("School added successfully!");
 
