@@ -27,11 +27,3 @@ testConnection();
 
 
 
-export const testConnection = async () => {
-  try {
-    await db.query("SELECT 1");
-    console.log("✅ MySQL Connected");
-  } catch (err) {
-    console.error("❌ DB Connection Failed:", err);
-  }
-};
